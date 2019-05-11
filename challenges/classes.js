@@ -11,9 +11,11 @@ CuboidMaker.prototype.getSurfaceArea = function() { return 2 * (this.length * th
 class CuboidMaker {
   /**
    * 
-   * @param {number} length
-   * @param {number} width
-   * @param {number} height
+   * @constructor
+   * @param {Object} atts
+   * @param {number} atts.length
+   * @param {number} atts.width
+   * @param {number} atts.height
    * 
    */
   constructor(atts) {
@@ -43,7 +45,7 @@ class CubeMaker extends CuboidMaker {
    */
   constructor(sideLength) {
     console.log(sideLength);
-    if(typeof(sideLength) == "object") {
+    if(typeof(sideLength) === "object") {
       super({ length: sideLength.sideLength, width: sideLength.sideLength, height: sideLength.sideLength });
     } else {
       super({ length: sideLength, width: sideLength, height: sideLength });
