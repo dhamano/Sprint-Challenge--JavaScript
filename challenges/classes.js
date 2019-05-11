@@ -40,7 +40,8 @@ console.log(cuboid.surfaceArea()); // 130
 class CubeMaker extends CuboidMaker {
   /**
    * 
-   * @param {number} sideLength
+   * @param {Object} sideLength
+   * @param {number} sideLength.sideLength
    * 
    */
   constructor(sideLength) {
