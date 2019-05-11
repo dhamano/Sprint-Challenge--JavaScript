@@ -91,10 +91,18 @@ console.log('contactInfo',contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
+/*
 for(let i=0; i<graduates.length; i++) {
   if(universities[i].substring(0, 3) === "Uni") {
     uni.push(universities[i]);
   }
+}
+//*/
+for(let i=0; i<graduates.length; i++) {
+  let uniFound = universities[i].toLowerCase().search('uni');
+  if(uniFound >= 0) {
+		uni.push(universities[i]);
+	}
 }
 console.log('uni',uni);
 
@@ -150,7 +158,7 @@ The zoos need to know their total animal population across the United States.
 Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = zooAnimals.filter((populationSum, arrayItem) => { return populationSum += arrayItem.population; }, 0);
+const populationTotal = zooAnimals.reduce((populationSum, arrayItem) => { return populationSum += arrayItem.population; }, 0);
 console.log('populationTotal',populationTotal);
 
 
